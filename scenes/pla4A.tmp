@@ -171,6 +171,10 @@ _data = {
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_cs43a")
+speed = null
+gravity = null
+jump_force = null
+health = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-11, -65)
