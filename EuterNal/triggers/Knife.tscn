@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://7t714f6u05o7"]
+
+[ext_resource type="Script" path="res://EuterNal/triggers/Area2D.gd" id="1_2bcfa"]
+[ext_resource type="Texture2D" uid="uid://c1hyiixvd2yui" path="res://EuterNal/triggers/360_F_199513756_9Xxrmsgf4fWQYrSGSJo6OSODwbgls28s.png" id="2_nxgqo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vny8"]
+size = Vector2(109, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24tb3"]
+size = Vector2(26, 101)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adm4l"]
+size = Vector2(61, 17)
+
+[node name="Knife" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_2bcfa")
+
+[node name="KnifeHurt" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-28.5, -2.5)
+shape = SubResource("RectangleShape2D_8vny8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="KnifeCollision" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-26.5, 6.55671e-08)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_24tb3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -3.14159
+scale = Vector2(0.338889, 0.338889)
+texture = ExtResource("2_nxgqo")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(49.5, 4.5)
+shape = SubResource("RectangleShape2D_adm4l")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

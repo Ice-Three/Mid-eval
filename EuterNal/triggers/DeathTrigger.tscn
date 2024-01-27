@@ -13,6 +13,3 @@ script = ExtResource("1_7e8an")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_k0ihf")
 disabled = true
-
-[node name="TileMap" type="TileMap" parent="."]
-format = 2
