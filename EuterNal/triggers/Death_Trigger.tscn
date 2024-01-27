@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnpbj6xiq6dm6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0ihf"]
+size = Vector2(200, 190)
+
+[node name="DeathTrigger" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_k0ihf")
+disabled = true
