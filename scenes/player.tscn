@@ -1,13 +1,21 @@
-[gd_scene load_steps=14 format=3 uid="uid://b1nogjp6t20rl"]
+[gd_scene load_steps=18 format=3 uid="uid://b1nogjp6t20rl"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_cs43a"]
 [ext_resource type="Texture2D" uid="uid://bii8gf7qdx5fh" path="res://assets/Sprites/01-King Human/Idle (78x58).png" id="2_svt67"]
 [ext_resource type="Texture2D" uid="uid://dps414510tui5" path="res://assets/Sprites/01-King Human/Run (78x58).png" id="3_fxfr8"]
+[ext_resource type="FontFile" uid="uid://cmcx0u1eoq2kt" path="res://EuterNal/UI/bnjinx.ttf" id="3_g641n"]
+[ext_resource type="Script" path="res://EuterNal/UI/healthDisplay.gd" id="4_dt72w"]
 [ext_resource type="Texture2D" uid="uid://d10x3ubc0v3l6" path="res://assets/Sprites/01-King Human/Jump (78x58).png" id="4_wnei8"]
 [ext_resource type="Texture2D" uid="uid://biteyc2sc6rhl" path="res://assets/Sprites/01-King Human/Fall (78x58).png" id="5_8d1uq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xy8a6"]
 size = Vector2(39, 29)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ie773"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="Animation" id="Animation_gxt1u"]
 length = 0.001
@@ -70,6 +78,58 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["res://.godot/imported/Dead (78x58).png-2f8c6565c7f0a0944faa6a5f2b8aa44a.ctex"]
+}
+
+[sub_resource type="Animation" id="Animation_onwja"]
+resource_name = "death"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture:load_path")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["res://.godot/imported/Dead (78x58).png-2f8c6565c7f0a0944faa6a5f2b8aa44a.ctex"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 3, 3, 3, 3, 3, 3]
 }
 
 [sub_resource type="Animation" id="Animation_yc7ap"]
@@ -284,61 +344,25 @@ tracks/3/keys = {
 "values": [ExtResource("3_fxfr8")]
 }
 
-[sub_resource type="Animation" id="Animation_onwja"]
-resource_name = "death"
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_esfmk"]
+resource_name = "dead"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture:load_path")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["res://.godot/imported/Dead (78x58).png-2f8c6565c7f0a0944faa6a5f2b8aa44a.ctex"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 3, 3, 3, 3, 3, 3]
+"values": [3]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0xya6"]
 _data = {
 "RESET": SubResource("Animation_gxt1u"),
+"dead": SubResource("Animation_esfmk"),
 "death": SubResource("Animation_onwja"),
 "fall": SubResource("Animation_yc7ap"),
 "idle": SubResource("Animation_n0e16"),
@@ -362,6 +386,35 @@ shape = SubResource("RectangleShape2D_xy8a6")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-8, -37)
 zoom = Vector2(0.65, 0.65)
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -471.0
+offset_top = -256.0
+offset_right = -385.0
+offset_bottom = -213.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ie773")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 6.0
+offset_right = 50.0
+offset_bottom = 46.0
+theme_override_fonts/normal_font = ExtResource("3_g641n")
+theme_override_font_sizes/normal_font_size = 25
+text = " HP"
+
+[node name="healthDisplay" type="RichTextLabel" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 38.0
+offset_top = 1.0
+offset_right = 195.0
+offset_bottom = 104.0
+theme_override_fonts/normal_font = ExtResource("3_g641n")
+theme_override_font_sizes/normal_font_size = 35
+text = " 0"
+script = ExtResource("4_dt72w")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

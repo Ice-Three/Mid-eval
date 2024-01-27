@@ -313,6 +313,7 @@ offset_bottom = -160.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jt7cf")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
 offset_left = 3.0
 offset_top = 6.0
 offset_right = 50.0
@@ -323,6 +324,7 @@ text = " HP"
 
 [node name="healthDisplay" type="RichTextLabel" parent="Panel"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_left = 38.0
 offset_top = 1.0
 offset_right = 195.0
