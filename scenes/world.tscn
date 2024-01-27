@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ddj63swdud01p"]
 
-[ext_resource type="PackedScene" uid="uid://b1nogjp6t20rl" path="res://scenes/player.tscn" id="1_wpjpn"]
+[ext_resource type="PackedScene" uid="uid://b1nogjp6t20rl" path="res://scenes/player.tscn" id="1_scaar"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_3aaf8"]
 size = Vector2(1000, 100)
@@ -20,11 +20,8 @@ size = Vector2(3272, 226.5)
 [node name="World" type="Node2D"]
 position = Vector2(-1, 0)
 
-[node name="player" parent="." instance=ExtResource("1_wpjpn")]
-position = Vector2(163, 151)
-speed = 500
-gravity = 30
-jump_force = 950
+[node name="player" parent="." instance=ExtResource("1_scaar")]
+position = Vector2(-25, 176)
 
 [node name="Platform1" type="StaticBody2D" parent="."]
 position = Vector2(440, 181)
@@ -36,7 +33,7 @@ scale = Vector2(0.596, 0.51)
 mesh = SubResource("QuadMesh_3aaf8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1"]
-position = Vector2(-199.5, 24)
+position = Vector2(-202, 24)
 shape = SubResource("RectangleShape2D_dgk6v")
 
 [node name="Platform3" type="StaticBody2D" parent="."]
