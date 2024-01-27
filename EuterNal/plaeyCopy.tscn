@@ -1,0 +1,227 @@
+[gd_scene load_steps=12 format=3 uid="uid://dnhh5v72erjpi"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_0mttt"]
+[ext_resource type="Texture2D" uid="uid://dycj1disspoot" path="res://assetsO/texturesO/Idle.png" id="2_1jagr"]
+[ext_resource type="Texture2D" uid="uid://ci43vi7fm1u0a" path="res://assetsO/texturesO/Run.png" id="3_1lfpb"]
+[ext_resource type="FontFile" uid="uid://cmcx0u1eoq2kt" path="res://EuterNal/UI/bnjinx.ttf" id="3_3e8sw"]
+[ext_resource type="Script" path="res://EuterNal/UI/healthDisplay.gd" id="4_7a58t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jt7cf"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xy8a6"]
+size = Vector2(68, 128)
+
+[sub_resource type="Animation" id="Animation_koy5b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_1jagr")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_8rcai"]
+resource_name = "idle_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_1jagr")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 5, 5, 5, 5, 5]
+}
+
+[sub_resource type="Animation" id="Animation_b4p0o"]
+resource_name = "run_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_1lfpb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_alehk"]
+_data = {
+"RESET": SubResource("Animation_koy5b"),
+"idle_animation": SubResource("Animation_8rcai"),
+"run_animation": SubResource("Animation_b4p0o")
+}
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_0mttt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-11, -65)
+texture = ExtResource("2_1jagr")
+hframes = 6
+
+[node name="Panel" type="Panel" parent="Sprite2D"]
+offset_left = -300.0
+offset_top = -138.0
+offset_right = -214.0
+offset_bottom = -95.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jt7cf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Sprite2D"]
+offset_left = -297.0
+offset_top = -132.0
+offset_right = -250.0
+offset_bottom = -92.0
+theme_override_fonts/normal_font = ExtResource("3_3e8sw")
+theme_override_font_sizes/normal_font_size = 25
+text = " HP"
+
+[node name="healthDisplay" type="RichTextLabel" parent="Sprite2D"]
+unique_name_in_owner = true
+offset_left = -262.0
+offset_top = -137.0
+offset_right = -222.0
+offset_bottom = -97.0
+theme_override_fonts/normal_font = ExtResource("3_3e8sw")
+theme_override_font_sizes/normal_font_size = 35
+text = " 0"
+script = ExtResource("4_7a58t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -66)
+shape = SubResource("RectangleShape2D_xy8a6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-2, -61)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_alehk")
+}
+autoplay = "idle_animation"
