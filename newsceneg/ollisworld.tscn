@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5j5b302u02km"]
+[gd_scene load_steps=11 format=3 uid="uid://c5j5b302u02km"]
 
-[ext_resource type="PackedScene" uid="uid://dm5pj4ap04fet" path="res://olli/scenesolli/IcePlayerCopy.tscn" id="1_p3a0r"]
+[ext_resource type="PackedScene" uid="uid://cobhlo52lrmj7" path="res://newsceneg/player.tscn" id="1_88wja"]
 [ext_resource type="Texture2D" uid="uid://5knxaeh47ajb" path="res://assets/Sprites/14-TileSets/Terrain (32x32).png" id="2_8v8w4"]
 [ext_resource type="Texture2D" uid="uid://cmbliuapk7hw7" path="res://assets/Sprites/14-TileSets/Decorations (32x32).png" id="3_ng7fj"]
+[ext_resource type="PackedScene" uid="uid://7t714f6u05o7" path="res://EuterNal/triggers/Knife.tscn" id="4_2kvt2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0tan"]
 size = Vector2(3272, 226.5)
@@ -1449,8 +1450,8 @@ size = Vector2(68, 16)
 [node name="World" type="Node2D"]
 position = Vector2(-1, 0)
 
-[node name="player" parent="." instance=ExtResource("1_p3a0r")]
-position = Vector2(-15, 176)
+[node name="player" parent="." instance=ExtResource("1_88wja")]
+position = Vector2(-23, 170)
 
 [node name="Killzone?" type="CollisionShape2D" parent="."]
 position = Vector2(49, 744)
@@ -1470,7 +1471,7 @@ show_behind_parent = true
 position = Vector2(1, -8)
 tile_set = SubResource("TileSet_eodd8")
 format = 2
-layer_0/tile_data = PackedInt32Array(524284, 655360, 2, 524285, 393216, 2, 524286, 393216, 2, 524287, 720896, 2, -1048555, 262144, 2, -1048554, 327680, 2, -1048553, 393216, 2, -1048552, 720896, 2, 1245216, 262144, 2, 1245217, 327680, 2, 1245218, 393216, 2, 1245219, 720896, 2)
+layer_0/tile_data = PackedInt32Array(524284, 655360, 2, 524285, 393216, 2, 524286, 393216, 2, 524287, 720896, 2, -1048555, 262144, 2, -1048554, 327680, 2, -1048553, 393216, 2, -1048552, 720896, 2, 1245216, 262144, 2, 1245217, 327680, 2, 1245218, 393216, 2, 1245219, 720896, 2, 262140, 262144, 6, 327676, 262144, 7, 393212, 262144, 8, 262141, 327680, 6, 327677, 327680, 7, 393213, 327680, 8, 262142, 393216, 6, 327678, 393216, 7, 393214, 393216, 8, 196608, 524288, 6, 262144, 524288, 7, 327680, 524288, 8, 196609, 589824, 6, 262145, 589824, 7, 327681, 589824, 8, 196610, 655360, 6, 262146, 655360, 7, 327682, 655360, 8, 262132, 262144, 6, 327668, 262144, 7, 393204, 262144, 8, 262133, 327680, 6, 327669, 327680, 7, 393205, 327680, 8, 262134, 393216, 6, 327670, 393216, 7, 393206, 393216, 8, 262136, 524288, 6, 327672, 524288, 7, 393208, 524288, 8, 262137, 589824, 6, 327673, 589824, 7, 393209, 589824, 8, 262138, 655360, 6, 327674, 655360, 7, 393210, 655360, 8, 1245213, 131072, 2, 1310749, 131072, 3, 1376285, 131072, 4, 1441821, 131072, 5, 1507357, 131072, 6, 1572893, 131072, 7, 1245214, 196608, 2, 1310750, 196608, 3, 1376286, 196608, 4, 1441822, 196608, 5, 1507358, 196608, 6, 1572894, 196608, 7, 1245221, 131072, 2, 1310757, 131072, 3, 1376293, 131072, 4, 1441829, 131072, 5, 1507365, 131072, 6, 1572901, 131072, 7, 1245222, 196608, 2, 1310758, 196608, 3, 1376294, 196608, 4, 1441830, 196608, 5, 1507366, 196608, 6, 1572902, 196608, 7, -1048551, 131072, 8, -983015, 131072, 9, -1048550, 196608, 8, -983014, 196608, 9, -458777, 524288, 6, -393241, 524288, 7, -327705, 524288, 8, -458776, 589824, 6, -393240, 589824, 7, -327704, 589824, 8, -458775, 655360, 6, -393239, 655360, 7, -327703, 655360, 8)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Decorations"]
 
@@ -1509,3 +1510,14 @@ shape = SubResource("RectangleShape2D_tagsf")
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D/StaticBody2D"]
+
+[node name="Knife" parent="." instance=ExtResource("4_2kvt2")]
+position = Vector2(519, 501)
+
+[node name="Knife2" parent="." instance=ExtResource("4_2kvt2")]
+position = Vector2(964, -15)
+rotation = 0.628319
+scale = Vector2(1.2, 1)
+
+[node name="Knife3" parent="." instance=ExtResource("4_2kvt2")]
+position = Vector2(-625, -191)

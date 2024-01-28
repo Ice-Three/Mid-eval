@@ -1,14 +1,14 @@
-[gd_scene load_steps=18 format=3 uid="uid://b1nogjp6t20rl"]
+[gd_scene load_steps=18 format=3 uid="uid://cobhlo52lrmj7"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_cs43a"]
-[ext_resource type="Texture2D" uid="uid://bii8gf7qdx5fh" path="res://assets/Sprites/01-King Human/Idle (78x58).png" id="2_svt67"]
-[ext_resource type="PackedScene" uid="uid://dah0egptxkipm" path="res://EuterNal/UI/InGameUI.tscn" id="3_5wgp6"]
-[ext_resource type="Texture2D" uid="uid://dps414510tui5" path="res://assets/Sprites/01-King Human/Run (78x58).png" id="3_fxfr8"]
-[ext_resource type="Texture2D" uid="uid://d10x3ubc0v3l6" path="res://assets/Sprites/01-King Human/Jump (78x58).png" id="4_wnei8"]
-[ext_resource type="Texture2D" uid="uid://biteyc2sc6rhl" path="res://assets/Sprites/01-King Human/Fall (78x58).png" id="5_8d1uq"]
-[ext_resource type="AudioStream" uid="uid://cutdtq14d10cu" path="res://assets/sfx/jump_c_02-102843.mp3" id="6_vhs8y"]
-[ext_resource type="AudioStream" uid="uid://crs0dtphleg0i" path="res://assets/sfx/dead-8bit-41400.mp3" id="7_nd2w0"]
-[ext_resource type="Script" path="res://scenes/DeathScren.gd" id="9_oh1gx"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_t764m"]
+[ext_resource type="Texture2D" uid="uid://bii8gf7qdx5fh" path="res://assets/Sprites/01-King Human/Idle (78x58).png" id="2_5y5c6"]
+[ext_resource type="PackedScene" uid="uid://dah0egptxkipm" path="res://EuterNal/UI/InGameUI.tscn" id="3_wp7ok"]
+[ext_resource type="Texture2D" uid="uid://biteyc2sc6rhl" path="res://assets/Sprites/01-King Human/Fall (78x58).png" id="4_6nvg1"]
+[ext_resource type="Texture2D" uid="uid://d10x3ubc0v3l6" path="res://assets/Sprites/01-King Human/Jump (78x58).png" id="5_ib4mf"]
+[ext_resource type="Texture2D" uid="uid://dps414510tui5" path="res://assets/Sprites/01-King Human/Run (78x58).png" id="6_f0qi3"]
+[ext_resource type="AudioStream" uid="uid://cutdtq14d10cu" path="res://assets/sfx/jump_c_02-102843.mp3" id="7_rcndm"]
+[ext_resource type="AudioStream" uid="uid://crs0dtphleg0i" path="res://assets/sfx/dead-8bit-41400.mp3" id="8_1px0x"]
+[ext_resource type="Script" path="res://scenes/DeathScren.gd" id="9_euapq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xy8a6"]
 size = Vector2(39, 29)
@@ -25,7 +25,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_svt67")]
+"values": [ExtResource("2_5y5c6")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -78,6 +78,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_onwja"]
 resource_name = "death"
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -201,7 +202,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_8d1uq")]
+"values": [ExtResource("4_6nvg1")]
 }
 
 [sub_resource type="Animation" id="Animation_n0e16"]
@@ -218,7 +219,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_svt67")]
+"values": [ExtResource("2_5y5c6")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -307,7 +308,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_wnei8")]
+"values": [ExtResource("5_ib4mf")]
 }
 
 [sub_resource type="Animation" id="Animation_8ju1u"]
@@ -360,7 +361,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_fxfr8")]
+"values": [ExtResource("6_f0qi3")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0xya6"]
@@ -374,11 +375,11 @@ _data = {
 }
 
 [node name="player" type="CharacterBody2D"]
-script = ExtResource("1_cs43a")
+script = ExtResource("1_t764m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2, -14)
-texture = ExtResource("2_svt67")
+texture = ExtResource("2_5y5c6")
 hframes = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -397,7 +398,7 @@ offset_right = 555.0
 offset_bottom = 299.0
 color = Color(0.247059, 0.219608, 0.317647, 1)
 
-[node name="InGameUI" parent="." instance=ExtResource("3_5wgp6")]
+[node name="InGameUI" parent="." instance=ExtResource("3_wp7ok")]
 unique_name_in_owner = true
 offset_left = -507.0
 offset_top = -278.0
@@ -411,13 +412,14 @@ libraries = {
 autoplay = "idle"
 
 [node name="JumpAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_vhs8y")
+stream = ExtResource("7_rcndm")
 
 [node name="DeathAudio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_nd2w0")
+stream = ExtResource("8_1px0x")
 
 [node name="DeathScren" type="CanvasLayer" parent="."]
-script = ExtResource("9_oh1gx")
+visible = false
+script = ExtResource("9_euapq")
 
 [node name="ColorRect" type="ColorRect" parent="DeathScren"]
 anchors_preset = 15
