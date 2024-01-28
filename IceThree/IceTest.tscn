@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://0qfoupi8josi"]
 
 [ext_resource type="PackedScene" uid="uid://xcryqsriibln" path="res://IceThree/IcePlayerCopy.tscn" id="1_few7b"]
-[ext_resource type="PackedScene" path="res://EuterNal/triggers/Knife.tscn" id="2_lba7p"]
+[ext_resource type="PackedScene" uid="uid://7t714f6u05o7" path="res://EuterNal/triggers/Knife.tscn" id="2_lba7p"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_3aaf8"]
 size = Vector2(1000, 100)
