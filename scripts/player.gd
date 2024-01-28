@@ -14,6 +14,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("jump") && is_on_floor():
 		velocity.y = -jump_force
+		$JumpAudio.play()
 	
 	
 	var horizontal_direction = Input.get_axis("move_left", "move_right")
