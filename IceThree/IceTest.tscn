@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://0qfoupi8josi"]
 
-[ext_resource type="PackedScene" uid="uid://dnhh5v72erjpi" path="res://EuterNal/plaeyCopy.tscn" id="1_uvkr4"]
-[ext_resource type="PackedScene" uid="uid://7t714f6u05o7" path="res://EuterNal/triggers/Knife.tscn" id="2_lba7p"]
+[ext_resource type="PackedScene" uid="uid://xcryqsriibln" path="res://IceThree/IcePlayerCopy.tscn" id="1_few7b"]
+[ext_resource type="PackedScene" path="res://EuterNal/triggers/Knife.tscn" id="2_lba7p"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_3aaf8"]
 size = Vector2(1000, 100)
@@ -17,6 +17,9 @@ size = Vector2(250, 50)
 
 [node name="World" type="Node2D"]
 position = Vector2(-1, 0)
+
+[node name="player" parent="." instance=ExtResource("1_few7b")]
+position = Vector2(73, 176)
 
 [node name="Platform1" type="StaticBody2D" parent="."]
 position = Vector2(440, 181)
@@ -52,10 +55,6 @@ mesh = SubResource("QuadMesh_wwdhh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
 position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_suci2")
-
-[node name="player" parent="." instance=ExtResource("1_uvkr4")]
-unique_name_in_owner = true
-position = Vector2(166, 131)
 
 [node name="Knife" parent="." instance=ExtResource("2_lba7p")]
 position = Vector2(391, 167)
