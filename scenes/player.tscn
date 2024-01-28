@@ -417,6 +417,7 @@ stream = ExtResource("6_vhs8y")
 stream = ExtResource("7_nd2w0")
 
 [node name="DeathScren" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("9_oh1gx")
 
 [node name="ColorRect" type="ColorRect" parent="DeathScren"]

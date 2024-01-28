@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlbncr2s4soxk"]
+
+[ext_resource type="Script" path="res://scenes/CanvasLayer.gd" id="1_ci2g8"]
+
+[node name="TitleScreen" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_ci2g8")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4, 0.4, 0.4, 1)
+
+[node name="Title" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 14.0
+offset_right = 352.0
+offset_bottom = 90.0
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect/Title"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Mid-Eval"
+
+[node name="Label2" type="Label" parent="CanvasLayer/ColorRect/Title"]
+layout_mode = 2
+text = "  Medieval game that is very mid"
+
+[node name="credits" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 13.0
+offset_right = 636.0
+offset_bottom = 308.0
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect/credits"]
+layout_mode = 2
+text = "Credits:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/ColorRect/credits"]
+custom_minimum_size = Vector2(0, 8.51)
+layout_mode = 2
+text = "-Evgenii Nalpin
+>>UI, health system, animations
+-Oskar Björkholm
+>>Animation rigging, audio, physics, level design
+-Oliver Backholm
+>>Level design"
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ColorRect"]
+layout_mode = 2
+offset_left = 64.0
+offset_top = 126.0
+offset_right = 352.0
+offset_bottom = 163.0
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Level select"
+
+[node name="level1" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 200.0
+offset_right = 121.0
+offset_bottom = 280.0
+text = "1"
+
+[node name="level2" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 200.0
+offset_right = 254.0
+offset_bottom = 280.0
+text = "2"
+
+[connection signal="button_down" from="CanvasLayer/ColorRect/level1" to="CanvasLayer" method="_on_level_1_button_down"]
+[connection signal="button_down" from="CanvasLayer/ColorRect/level2" to="CanvasLayer" method="_on_level_2_button_down"]
