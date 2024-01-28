@@ -53,6 +53,7 @@ offset_left = 824.0
 offset_top = 16.0
 offset_right = 980.0
 offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("2_qekwg")
 text = "Main menu"
 
 [connection signal="button_down" from="mainmenu" to="." method="_on_button_button_down"]
