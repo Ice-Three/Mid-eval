@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dah0egptxkipm"]
+[gd_scene load_steps=4 format=3 uid="uid://dah0egptxkipm"]
 
 [ext_resource type="Script" path="res://EuterNal/UI/InGameUI.gd" id="1_b00qy"]
 [ext_resource type="FontFile" uid="uid://cmcx0u1eoq2kt" path="res://EuterNal/UI/bnjinx.ttf" id="2_qekwg"]
-[ext_resource type="Script" path="res://EuterNal/UI/healthDisplay.gd" id="3_qrsq4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfp78"]
 corner_radius_top_left = 10
@@ -27,23 +26,23 @@ offset_right = 107.0
 offset_bottom = 56.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tfp78")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 19.0
-offset_right = 71.0
-offset_bottom = 59.0
+offset_left = 3.0
+offset_top = 6.0
+offset_right = 50.0
+offset_bottom = 46.0
 theme_override_fonts/normal_font = ExtResource("2_qekwg")
 theme_override_font_sizes/normal_font_size = 25
 text = " HP"
 
-[node name="healthDisplay" type="RichTextLabel" parent="."]
+[node name="healthDisplay" type="RichTextLabel" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 59.0
-offset_top = 14.0
-offset_right = 99.0
-offset_bottom = 54.0
+offset_left = 38.0
+offset_top = 1.0
+offset_right = 78.0
+offset_bottom = 41.0
 theme_override_fonts/normal_font = ExtResource("2_qekwg")
 theme_override_font_sizes/normal_font_size = 35
 text = " 0"
-script = ExtResource("3_qrsq4")

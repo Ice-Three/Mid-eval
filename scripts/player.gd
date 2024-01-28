@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var player_health = 3
 var horizontal_direction = Input.get_axis("move_left", "move_right")
 
-@onready var ui = %healthDisplay
+@onready var ui = %InGameUI
 @onready var ap = $AnimationPlayer
 
 func _physics_process(delta):
@@ -31,7 +31,7 @@ func _physics_process(delta):
 	update_animations(horizontal_direction)
 
 func _process(delta):
-	ui.set_text(" " + str(player_health))
+	%InGameUI.update_health(str(player_health))
 	
 # Function that defines player damage & death
 func take_damage():
@@ -52,7 +52,7 @@ func update_animations(horizontal_direction):
 				ap.play("jump")
 			elif velocity.y > 0:
 				ap.play("fall")
-	else:
+	elif player_health <= 0:
 		ap.play("death")
 
 func switch_direction(horizontal_direction):

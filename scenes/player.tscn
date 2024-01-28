@@ -2,18 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_cs43a"]
 [ext_resource type="Texture2D" uid="uid://bii8gf7qdx5fh" path="res://assets/Sprites/01-King Human/Idle (78x58).png" id="2_svt67"]
-[ext_resource type="FontFile" uid="uid://cmcx0u1eoq2kt" path="res://EuterNal/UI/bnjinx.ttf" id="3_8q84e"]
+[ext_resource type="PackedScene" uid="uid://dah0egptxkipm" path="res://EuterNal/UI/InGameUI.tscn" id="3_5wgp6"]
 [ext_resource type="Texture2D" uid="uid://dps414510tui5" path="res://assets/Sprites/01-King Human/Run (78x58).png" id="3_fxfr8"]
 [ext_resource type="Texture2D" uid="uid://d10x3ubc0v3l6" path="res://assets/Sprites/01-King Human/Jump (78x58).png" id="4_wnei8"]
 [ext_resource type="Texture2D" uid="uid://biteyc2sc6rhl" path="res://assets/Sprites/01-King Human/Fall (78x58).png" id="5_8d1uq"]
 [ext_resource type="AudioStream" uid="uid://cutdtq14d10cu" path="res://assets/sfx/jump_c_02-102843.mp3" id="6_vhs8y"]
 [ext_resource type="AudioStream" uid="uid://crs0dtphleg0i" path="res://assets/sfx/dead-8bit-41400.mp3" id="7_nd2w0"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_huip0"]
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[ext_resource type="Script" path="res://scenes/DeathScren.gd" id="9_oh1gx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xy8a6"]
 size = Vector2(39, 29)
@@ -131,6 +126,30 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 3, 3, 3, 3, 3, 3]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DeathScren:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DeathScren/ColorRect:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_yc7ap"]
@@ -363,34 +382,6 @@ position = Vector2(2, -14)
 texture = ExtResource("2_svt67")
 hframes = 11
 
-[node name="TopLeftUI" type="Panel" parent="."]
-offset_left = -463.0
-offset_top = -252.0
-offset_right = -377.0
-offset_bottom = -209.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_huip0")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="TopLeftUI"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 6.0
-offset_right = 50.0
-offset_bottom = 46.0
-theme_override_fonts/normal_font = ExtResource("3_8q84e")
-theme_override_font_sizes/normal_font_size = 25
-text = " HP"
-
-[node name="healthDisplay" type="RichTextLabel" parent="TopLeftUI"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 38.0
-offset_top = 1.0
-offset_right = 195.0
-offset_bottom = 104.0
-theme_override_fonts/normal_font = ExtResource("3_8q84e")
-theme_override_font_sizes/normal_font_size = 35
-text = " 0"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9.5, -14.5)
 shape = SubResource("RectangleShape2D_xy8a6")
@@ -407,6 +398,13 @@ offset_right = 555.0
 offset_bottom = 299.0
 color = Color(0.247059, 0.219608, 0.317647, 1)
 
+[node name="InGameUI" parent="." instance=ExtResource("3_5wgp6")]
+unique_name_in_owner = true
+offset_left = -507.0
+offset_top = -278.0
+offset_right = -507.0
+offset_bottom = -278.0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_0xya6")
@@ -418,3 +416,36 @@ stream = ExtResource("6_vhs8y")
 
 [node name="DeathAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_nd2w0")
+
+[node name="DeathScren" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("9_oh1gx")
+
+[node name="ColorRect" type="ColorRect" parent="DeathScren"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.72, 0, 0.0119998, 0.431373)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeathScren/ColorRect"]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 74.0
+offset_right = 432.0
+offset_bottom = 258.0
+
+[node name="Label" type="Label" parent="DeathScren/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "You're dead!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="DeathScren/ColorRect/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+text = "Restart"
+
+[connection signal="button_down" from="DeathScren/ColorRect/VBoxContainer/Button" to="DeathScren" method="_on_button_button_down"]

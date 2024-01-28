@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dnhh5v72erjpi"]
+[gd_scene load_steps=17 format=3 uid="uid://dnhh5v72erjpi"]
 
 [ext_resource type="Script" path="res://EuterNal/plaeyCopy.gd" id="1_a6kbp"]
 [ext_resource type="Texture2D" uid="uid://bii8gf7qdx5fh" path="res://assets/Sprites/01-King Human/Idle (78x58).png" id="2_orsqo"]
@@ -289,6 +289,12 @@ _data = {
 "run": SubResource("Animation_8ju1u")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38tqr"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_a6kbp")
 
@@ -306,6 +312,7 @@ shape = SubResource("RectangleShape2D_oxf7x")
 position = Vector2(-2, -61)
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 offset_left = -311.0
 offset_top = -203.0
 offset_right = -225.0
@@ -339,3 +346,31 @@ libraries = {
 "": SubResource("AnimationLibrary_0xya6")
 }
 autoplay = "idle"
+
+[node name="TopLeftUI" type="Panel" parent="."]
+visible = false
+offset_left = -463.0
+offset_top = -252.0
+offset_right = -377.0
+offset_bottom = -209.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_38tqr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TopLeftUI"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 6.0
+offset_right = 50.0
+offset_bottom = 46.0
+theme_override_fonts/normal_font = ExtResource("3_3e8sw")
+theme_override_font_sizes/normal_font_size = 25
+text = " HP"
+
+[node name="healthDisplay" type="RichTextLabel" parent="TopLeftUI"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 1.0
+offset_right = 195.0
+offset_bottom = 104.0
+theme_override_fonts/normal_font = ExtResource("3_3e8sw")
+theme_override_font_sizes/normal_font_size = 35
+text = " 0"
