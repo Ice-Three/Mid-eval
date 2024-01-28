@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bs6apwl0bwfq8"]
+[gd_scene load_steps=13 format=3 uid="uid://bs6apwl0bwfq8"]
 
 [ext_resource type="Texture2D" uid="uid://5knxaeh47ajb" path="res://assets/Sprites/14-TileSets/Terrain (32x32).png" id="2_nlwiw"]
 [ext_resource type="PackedScene" uid="uid://b1nogjp6t20rl" path="res://scenes/player.tscn" id="3_7yub0"]
@@ -1450,6 +1450,9 @@ size = Vector2(96, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnmhn"]
 size = Vector2(34.25, 6)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ieayp"]
+size = Vector2(134, 16)
+
 [node name="World" type="Node2D"]
 position = Vector2(-1, 0)
 
@@ -1471,7 +1474,7 @@ layer_0/tile_data = PackedInt32Array(65533, 262144, 2, 131069, 262144, 3, 65534,
 show_behind_parent = true
 tile_set = SubResource("TileSet_eodd8")
 format = 2
-layer_0/tile_data = PackedInt32Array(-524267, 262144, 2, -524266, 327680, 2, -524265, 393216, 2, -524264, 458752, 2, -524263, 524288, 2, -524262, 589824, 2, -720867, 262144, 2, -720866, 327680, 2, -720865, 393216, 2, -720864, 458752, 2, -720863, 524288, 2, -720862, 589824, 2, -851933, 655360, 2, -851932, 720896, 2, -1048541, 655360, 2, -1048540, 720896, 2, -262040, 655360, 2, -262039, 720896, 2, -130963, 655360, 2, -130962, 720896, 2, -262027, 655360, 2, -262026, 720896, 2, -65413, 655360, 2, -65412, 720896, 2, 196737, 655360, 2, 196738, 720896, 2, 393352, 655360, 2, 393353, 720896, 2, 196750, 655360, 2, 196751, 720896, 2, 458906, 655360, 2, 458907, 720896, 2, 524452, 655360, 2, 524453, 720896, 2, 589998, 655360, 2, 589999, 720896, 2, 1048675, 262144, 2, 1048676, 262144, 2, 1048677, 262144, 2, 1048678, 262144, 2, 1048679, 262144, 2, 1048680, 262144, 2, 1048681, 262144, 2, 1048682, 262144, 2, 655459, 262144, 2, 655460, 262144, 2, 655461, 262144, 2, 655462, 262144, 2, 655463, 262144, 2, 655464, 262144, 2, 655465, 262144, 2, 655466, 262144, 2, 262243, 262144, 2, 262244, 262144, 2, 262245, 262144, 2, 262246, 262144, 2, 262247, 262144, 2, 262248, 262144, 2, 262249, 262144, 2, 262250, 262144, 2)
+layer_0/tile_data = PackedInt32Array(-524267, 262144, 2, -524266, 327680, 2, -524265, 393216, 2, -524264, 458752, 2, -524263, 524288, 2, -524262, 589824, 2, -720867, 262144, 2, -720866, 327680, 2, -720865, 393216, 2, -720864, 458752, 2, -720863, 524288, 2, -720862, 589824, 2, -851933, 655360, 2, -851932, 720896, 2, -1048541, 655360, 2, -1048540, 720896, 2, -262040, 655360, 2, -262039, 720896, 2, -130963, 655360, 2, -130962, 720896, 2, -262027, 655360, 2, -262026, 720896, 2, -65413, 655360, 2, -65412, 720896, 2, 196737, 655360, 2, 196738, 720896, 2, 393352, 655360, 2, 393353, 720896, 2, 196750, 655360, 2, 196751, 720896, 2, 458906, 655360, 2, 458907, 720896, 2, 524452, 655360, 2, 524453, 720896, 2, 589998, 655360, 2, 589999, 720896, 2, 1048675, 262144, 2, 1048676, 262144, 2, 1048677, 262144, 2, 1048678, 262144, 2, 1048679, 262144, 2, 1048680, 262144, 2, 1048681, 262144, 2, 1048682, 262144, 2, 655459, 262144, 2, 655460, 262144, 2, 655461, 262144, 2, 655462, 262144, 2, 655463, 262144, 2, 655464, 262144, 2, 655465, 262144, 2, 655466, 262144, 2, 262243, 262144, 2, 262244, 262144, 2, 262245, 262144, 2, 262246, 262144, 2, 262247, 262144, 2, 262248, 262144, 2, 262249, 262144, 2, 262250, 262144, 2, -655302, 262144, 6, -589766, 262144, 7, -524230, 262144, 8, -655301, 327680, 6, -589765, 327680, 7, -524229, 327680, 8, -655300, 393216, 6, -589764, 393216, 7, -524228, 393216, 8, -851891, 524288, 6, -786355, 524288, 7, -720819, 524288, 8, -851890, 589824, 6, -786354, 589824, 7, -720818, 589824, 8, -851889, 655360, 6, -786353, 655360, 7, -720817, 655360, 8, -851896, 262144, 6, -786360, 262144, 7, -720824, 262144, 8, -851895, 327680, 6, -786359, 327680, 7, -720823, 327680, 8, -851894, 393216, 6, -786358, 393216, 7, -720822, 393216, 8, -851901, 524288, 6, -786365, 524288, 7, -720829, 524288, 8, -851900, 589824, 6, -786364, 589824, 7, -720828, 589824, 8, -851899, 655360, 6, -786363, 655360, 7, -720827, 655360, 8, -851886, 524288, 6, -786350, 524288, 7, -720814, 524288, 8, -851885, 589824, 6, -786349, 589824, 7, -720813, 589824, 8, -851884, 655360, 6, -786348, 655360, 7, -720812, 655360, 8, -851880, 262144, 6, -786344, 262144, 7, -720808, 262144, 8, -851879, 327680, 6, -786343, 327680, 7, -720807, 327680, 8, -851878, 393216, 6, -786342, 393216, 7, -720806, 393216, 8, -851875, 524288, 6, -786339, 524288, 7, -720803, 524288, 8, -851874, 589824, 6, -786338, 589824, 7, -720802, 589824, 8, -851873, 655360, 6, -786337, 655360, 7, -720801, 655360, 8, -655360, 262144, 6, -589824, 262144, 7, -524288, 262144, 8, -655359, 327680, 6, -589823, 327680, 7, -524287, 327680, 8, -655358, 393216, 6, -589822, 393216, 7, -524286, 393216, 8, -655352, 262144, 6, -589816, 262144, 7, -524280, 262144, 8, -655351, 327680, 6, -589815, 327680, 7, -524279, 327680, 8, -655350, 393216, 6, -589814, 393216, 7, -524278, 393216, 8)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Decorations"]
 
@@ -1549,6 +1552,46 @@ position = Vector2(2800, 146)
 shape = SubResource("RectangleShape2D_gnmhn")
 one_way_collision = true
 
+[node name="StaticBody2D4" type="StaticBody2D" parent="Decorations"]
+position = Vector2(1700, 58)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/StaticBody2D4"]
+position = Vector2(-48, 8)
+shape = SubResource("RectangleShape2D_ieayp")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Decorations/StaticBody2D4"]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Decorations"]
+position = Vector2(1647, 143)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/StaticBody2D3"]
+position = Vector2(2, 118)
+shape = SubResource("RectangleShape2D_ieayp")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Decorations/StaticBody2D3"]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Decorations"]
+position = Vector2(1646, 46)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/StaticBody2D2"]
+position = Vector2(2, 118)
+shape = SubResource("RectangleShape2D_ieayp")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Decorations/StaticBody2D2"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Decorations/StaticBody2D2"]
+position = Vector2(417, -256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/StaticBody2D2/StaticBody2D"]
+position = Vector2(-48, 8)
+shape = SubResource("RectangleShape2D_ieayp")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Decorations/StaticBody2D2/StaticBody2D"]
+
 [node name="player" parent="." instance=ExtResource("3_7yub0")]
 position = Vector2(15, -8)
 
@@ -1566,3 +1609,9 @@ position = Vector2(2008, 305)
 
 [node name="Knife5" parent="." instance=ExtResource("4_b2up0")]
 position = Vector2(1792, 307)
+
+[node name="Knife6" parent="." instance=ExtResource("4_b2up0")]
+position = Vector2(674, 257)
+
+[node name="Knife7" parent="." instance=ExtResource("4_b2up0")]
+position = Vector2(754, 251)

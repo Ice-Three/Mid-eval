@@ -46,3 +46,14 @@ offset_bottom = 41.0
 theme_override_fonts/normal_font = ExtResource("2_qekwg")
 theme_override_font_sizes/normal_font_size = 35
 text = " 0"
+
+[node name="mainmenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 16.0
+offset_right = 980.0
+offset_bottom = 54.0
+text = "Main menu"
+
+[connection signal="button_down" from="mainmenu" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="mainmenu" to="." method="_on_mainmenu_button_down"]
