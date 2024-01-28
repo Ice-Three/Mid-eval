@@ -4,27 +4,30 @@ extends CharacterBody2D
 @export var gravity = 30
 @export var jump_force = 700
 @export var player_health = 3
+var horizontal_direction = Input.get_axis("move_left", "move_right")
 
 @onready var ui = %healthDisplay
 @onready var ap = $AnimationPlayer
 
 func _physics_process(delta):
-	if !is_on_floor():
-		velocity.y += gravity
-		if velocity.y > 1000:
-			velocity.y = 500
-	
-	if Input.is_action_just_pressed("jump") && is_on_floor():
-		velocity.y = -jump_force
-		$JumpAudio.play()
-	
-	var horizontal_direction = Input.get_axis("move_left", "move_right")
-	velocity.x = speed * horizontal_direction
-	
-	if horizontal_direction != 0:
-		switch_direction(horizontal_direction)
-	
-	move_and_slide()
+	if player_health > 0:
+		if !is_on_floor():
+			velocity.y += gravity
+			if velocity.y > 1000:
+				velocity.y = 500
+		
+		if Input.is_action_just_pressed("jump") && is_on_floor():
+			velocity.y = -jump_force
+			$JumpAudio.play()
+		
+		var horizontal_direction = Input.get_axis("move_left", "move_right")
+		velocity.x = speed * horizontal_direction
+		
+		if horizontal_direction != 0:
+			switch_direction(horizontal_direction)
+		
+		move_and_slide()
+		
 	update_animations(horizontal_direction)
 
 func _process(delta):
@@ -51,7 +54,6 @@ func update_animations(horizontal_direction):
 				ap.play("fall")
 	else:
 		ap.play("death")
-		ap.play("dead")
 
 func switch_direction(horizontal_direction):
 	$Sprite2D.flip_h  = (horizontal_direction == -1)
