@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdog7qhp226qj"]
+
+[ext_resource type="Script" path="res://EuterNal/triggers/DeathTrigger.gd" id="1_k3gqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0ihf"]
+size = Vector2(200, 190)
+
+[node name="DeathTrigger" type="Node2D"]
+script = ExtResource("1_k3gqm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_k0ihf")
+disabled = true
